@@ -180,6 +180,7 @@ tasks.withType<KotlinCompilationTask<*>>().configureEach {
 }
 
 // Workaround for https://github.com/kotest/kotest/issues/4647
-tasks.matching { "wasmJsD8Test" in it.name }.configureEach {
+val kotestBrokenTasks = listOf("wasmJsBrowserTest", "wasmJsD8Test")
+tasks.matching { it.name in kotestBrokenTasks }.configureEach {
     enabled = false
 }
