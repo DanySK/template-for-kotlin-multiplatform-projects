@@ -180,10 +180,3 @@ publishing {
         }
     }
 }
-
-// Workaround for https://github.com/kotest/kotest/issues/4521 (fixed but not released)
-tasks.withType<KotlinCompilationTask<*>>().configureEach {
-    compilerOptions {
-        allWarningsAsErrors = !name.contains("test", ignoreCase = true)
-    }
-}
