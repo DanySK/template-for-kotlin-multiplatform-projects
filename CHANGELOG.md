@@ -1,3 +1,40 @@
+## [0.2.5](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/compare/0.2.4...0.2.5) (2025-01-08)
+
+### Dependency updates
+
+* **core-deps:** update kotlin monorepo to v2.1.0 ([#663](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/issues/663)) ([f881893](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/f881893ee33107a71ae962d96af2068ebdf00f96))
+* **deps:** update plugin kotlin-qa to v0.77.1 ([#671](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/issues/671)) ([cd7a599](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/cd7a599c849089180d2269e32d3b6432b244db1e))
+* **deps:** update plugin kotlin-qa to v0.78.0 ([#679](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/issues/679)) ([9436fd6](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/9436fd6aa2d56a01c71ea4adf53af5565b50dbfc))
+* **deps:** update plugin publishoncentral to v7.0.5-dev0w-f7d1ad3 ([#697](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/issues/697)) ([4ee0167](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/4ee0167f82a7a8def8d18b0ceb36c9bcae32f963))
+
+## [0.2.4](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/compare/0.2.3...0.2.4) (2025-01-08)
+
+### Dependency updates
+
+* **deps:** update dependency gradle to v8.12 ([#689](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/issues/689)) ([3b49084](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/3b49084a1da05d92f3f8b5448178575694835f85))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.117 ([#691](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/issues/691)) ([6f8f3ed](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/6f8f3ed63c14df0cf502436b97cd4d673b42c067))
+* **deps:** update plugin npm-publish to v3.5.0 ([#692](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/issues/692)) ([ea118ea](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/ea118ea11be16a1dbae214afe745b8b0094b1a22))
+* **deps:** update plugin npm-publish to v3.5.1 ([#694](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/issues/694)) ([217c437](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/217c437c5cc29aab8651af3b1ca345cd6c4f21a4))
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v2.0.17 ([#685](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/issues/685)) ([2fabf93](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/2fabf93c583058be5b53e2c4a8eaa1985ff0a719))
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v2.0.18 ([#690](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/issues/690)) ([fd09f00](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/fd09f005c658f703dd3905cff253ce92e3b6eb74))
+
+### Documentation
+
+* switch to Dokka v2 ([#693](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/issues/693)) ([3810319](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/3810319aa11b6ddac3e32a43cc2f2af3eb0923bc))
+
+### Build and continuous integration
+
+* add a `yarn.lock` actualizer ([3c8f71d](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/3c8f71d6ab20611269b0850eb19bfd967b9ffcd5))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v3.5.26 ([#686](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/issues/686)) ([6a01104](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/6a0110452ec4d31bb9ee7dc12cf5aad70d58ae73))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v3.5.27 ([#687](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/issues/687)) ([26f7750](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/26f7750825f53303e27a22ab5eb86b21e3604de0))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v3.5.28 ([#688](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/issues/688)) ([6f46780](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/6f46780c3705f16bda86da5170129f72c7191a2a))
+* temporarily disable `allWarningsAsErrors` on test compilation due to kotest/kotest[#4521](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/issues/4521) ([4ae15e9](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/4ae15e9899f48c86329f319741d7d5ed11e6d8bb))
+* work around kotest/kotest[#4647](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/issues/4647) ([2d1cfcb](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/2d1cfcbfa21e2137ac0603fb3e7e8ad6c73a340f))
+
+### Style improvements
+
+* disable `ktlint_standard_class-signature` on kotlin tests as per [@paul-dingemans](https://github.com/paul-dingemans)' suggestion in pinterest/ktlint[#2902](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/issues/2902) ([7bb33d5](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/7bb33d5a6e91a4075ed21f57a9b783fbf403c825))
+
 ## [0.2.3](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/compare/0.2.2...0.2.3) (2024-12-16)
 
 ### Dependency updates

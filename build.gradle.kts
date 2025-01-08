@@ -1,4 +1,4 @@
-import org.danilopianini.gradle.mavencentral.JavadocJar
+import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompilationTask
@@ -63,6 +63,7 @@ kotlin {
         binaries.library()
     }
 
+    @OptIn(ExperimentalWasmDsl::class)
     wasmJs {
         browser()
         nodejs()
@@ -118,16 +119,6 @@ kotlin {
     }
 }
 
-tasks.dokkaJavadoc {
-    enabled = false
-}
-
-tasks.withType<JavadocJar>().configureEach {
-    val dokka = tasks.dokkaHtml.get()
-    dependsOn(dokka)
-    from(dokka.outputDirectory)
-}
-
 signing {
     if (System.getenv("CI") == "true") {
         val signingKey: String? by project
@@ -137,6 +128,7 @@ signing {
 }
 
 publishOnCentral {
+    repoOwner.set("DanySK")
     projectLongName.set("Template for Kotlin Multiplatform Project")
     projectDescription.set("A template repository for Kotlin Multiplatform projects")
     repository("https://maven.pkg.github.com/danysk/${rootProject.name}".lowercase()) {
@@ -168,22 +160,5 @@ npmPublish {
             authToken.set(npmToken)
             dry.set(npmToken.isNullOrBlank())
         }
-    }
-}
-
-publishing {
-    publications {
-        publications.withType<MavenPublication>().configureEach {
-            if ("OSSRH" !in name) {
-                artifact(tasks.javadocJar)
-            }
-        }
-    }
-}
-
-// Workaround for https://github.com/kotest/kotest/issues/4521 (fixed but not released)
-tasks.withType<KotlinCompilationTask<*>>().configureEach {
-    compilerOptions {
-        allWarningsAsErrors = !name.contains("test", ignoreCase = true)
     }
 }
