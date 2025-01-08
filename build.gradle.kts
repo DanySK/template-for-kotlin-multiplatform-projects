@@ -27,11 +27,6 @@ multiJvm {
 }
 
 kotlin {
-    compilerOptions {
-        // Temporarily disable warnings as errors until kotest/kotest#4521 is released
-        allWarningsAsErrors = false
-    }
-
     jvmToolchain(21)
 
     jvm {
