@@ -49,8 +49,6 @@ jobs:
       matrix:
         os: [ windows-2022, macos-14, ubuntu-24.04 ]
     runs-on: ${{ matrix.os }}
-    outputs:
-      staging-repo-id: ${{ steps.staging-repo.outputs.MavenCentral }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4.2.2
@@ -59,21 +57,18 @@ jobs:
       - uses: DanySK/build-check-deploy-gradle-action@3.5.28
         id: staging-repo
         with:
-          should-deploy: ${{ runner.os == 'macOS' && needs.check-secrets.outputs.run-with-secrets == 'true' }} # Deploy from macOS since it supports all the platforms
+          should-deploy: ${{ runner.os == 'macos' && needs.check-secrets.outputs.run-with-secrets == 'true' }} # Deploy from macOS since it supports all the platforms
           deploy-command: |
+            ./gradlew createStagingRepositoryOnMavenCentral --parallel
             NEXT_VERSION="${{ needs.precompute-next-version.outputs.next-version }}"
             OVERRIDE_VERSION=$([[ "$NEXT_VERSION" != "" ]] && echo "-PforceVersion=$(echo $NEXT_VERSION)" || echo "")
-            ./gradlew createStagingRepositoryOnMavenCentral --parallel
-
             [[ -f build/staging-repo-ids.properties ]] || (
               echo "Staging repositories ID file not found" &&
               exit 1
             )
             REPO_IDS=$(cat build/staging-repo-ids.properties)
             echo "Staging repositories IDs:\n$REPO_IDS"
-            echo $REPO_IDS >> $GITHUB_OUTPUT
-            
-            MAVEN_CENTRAL_STAGING_ID=${REPO_IDS#MavenCentral=} 
+            MAVEN_CENTRAL_ID=${REPO_IDS#MavenCentral=} 
             ./gradlew $OVERRIDE_VERSION -PstagingRepositoryId=$MAVEN_CENTRAL_STAGING_ID uploadAll close --parallel
           should-run-codecov: ${{ runner.os == 'Linux' }}
           codecov-token: ${{ secrets.CODECOV_TOKEN }}
@@ -81,6 +76,32 @@ jobs:
           maven-central-password: ${{ secrets.MAVEN_CENTRAL_PASSWORD }}
           signing-key: ${{ secrets.SIGNING_KEY }}
           signing-password: ${{ secrets.SIGNING_PASSWORD }}
+      - name: Upload Staging Repo IDs
+        uses: actions/upload-artifact@v4
+        if: ${{ runner.os == 'macOS' && needs.check-secrets.outputs.run-with-secrets == 'true' }}
+        with:
+          name: staging-repo-ids
+          path: build/staging-repo-ids.properties
+
+  set-staging-repo-id:
+    runs-on: ubuntu-24.04
+    needs:
+      - build
+      - check-secrets
+    outputs:
+      staging-repo-id: ${{ steps.set-staging-repo-id.outputs.MavenCentral }}
+    if: ${{ needs.check-secrets.outputs.run-with-secrets == 'true' }}
+    steps:
+      - name: Restore staging repository ID
+        uses: actions/download-artifact@v4
+        with:
+          name: staging-repo-ids
+          path: build/
+      - name: Set staging repository ID
+        id: set-staging-repo-id
+        run: |
+          REPO_IDS=$(cat build/staging-repo-ids.properties)       
+          echo "$REPO_IDS" >> $GITHUB_OUTPUT
 
   release:
     concurrency:
@@ -90,6 +111,7 @@ jobs:
       cancel-in-progress: false
     needs:
       - check-secrets
+      - set-staging-repo-id
       - precompute-next-version
       - build
     runs-on: ubuntu-24.04
@@ -105,7 +127,7 @@ jobs:
           node-version-file: package.json
       - uses: DanySK/build-check-deploy-gradle-action@3.5.28
         env:
-          STAGING_REPO_ID: ${{ needs.build.outputs.staging-repo-id }}
+          STAGING_REPO_ID: ${{ needs.set-staging-repo-id.outputs.staging-repo-id }}
         with:
           retries-on-failure: '1'
           build-command: true
@@ -140,7 +162,8 @@ jobs:
 
   drop-staging-repos:
     needs:
-      - success
+      - set-staging-repo-id
+      - release
     runs-on: ubuntu-24.04
     if: always()
     steps:
@@ -153,6 +176,6 @@ jobs:
           --url "https://s01.oss.sonatype.org/service/local/staging/bulk/drop"
           --header "Accept: application/json"
           --header "Content-Type: application/json"
-          --data '{"data":{"stagedRepositoryIds":["${{ needs.build.outputs.staging-repo-id }}"]}}'
+          --data '{"data":{"stagedRepositoryIds":["${{ needs.set-staging-repo-id.outputs.staging-repo-id }}"]}}'
           --user "$MAVEN_CENTRAL_USERNAME:$MAVEN_CENTRAL_PASSWORD"
           --verbose
