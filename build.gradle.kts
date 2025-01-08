@@ -163,16 +163,6 @@ npmPublish {
     }
 }
 
-publishing {
-    publications {
-        publications.withType<MavenPublication>().configureEach {
-            if ("OSSRH" !in name) {
-                artifact(tasks.javadocJar)
-            }
-        }
-    }
-}
-
 // Workaround for https://github.com/kotest/kotest/issues/4521 (fixed but not released)
 tasks.withType<KotlinCompilationTask<*>>().configureEach {
     compilerOptions {
