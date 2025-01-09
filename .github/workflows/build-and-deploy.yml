@@ -149,7 +149,7 @@ jobs:
     if: always() && !(contains(needs.staging-repo.result, 'failure') || contains(needs.staging-repo.result, 'cancelled'))
     steps:
       - name: Drop staging repository
-        uses: danysk/action-drop-ossrh-staging-repo@1.0.0
+        uses: danysk/action-drop-ossrh-staging-repo@1.0.1
         with:
           repo-id: ${{ needs.staging-repo.outputs.staging-repo-id }}
           maven-central-username: ${{ secrets.MAVEN_CENTRAL_USERNAME }}
