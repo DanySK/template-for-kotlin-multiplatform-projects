@@ -83,7 +83,7 @@ jobs:
       - check-secrets
       - staging-repo
       - precompute-next-version
-    if: always() && !contains(needs.*.result, 'failure')
+    if: always() && !contains(needs.*.result, 'failure')  && !contains(needs.*.result, 'cancelled')
     strategy:
       fail-fast: false
       matrix:
