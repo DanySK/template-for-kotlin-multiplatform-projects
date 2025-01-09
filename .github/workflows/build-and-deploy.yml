@@ -44,6 +44,7 @@ jobs:
       staging-repo-id: ${{ steps.create-staging-repo.outputs.staging-repo-id }}
     steps:
       - id: create-staging-repo
+        name: Create a staging repository
         env:
           # Likely for most: io.github.${{ github.repository_owner }}
           GROUP_ID: org.danilopianini
@@ -56,8 +57,8 @@ jobs:
           PAYLOAD="{\"data\":{\"description\":\"Staging repository for $GROUP_ID\"}}"
           # Fetch the profile ID for the group ID
           RESPONSE=$(curl -u "$CREDENTIALS" -s "$NEXUS_URL" -H "Accept: application/json")
-          echo "Response:"
-          echo "$RESPONSE"
+          echo "::debug::Response:"
+          echo "::debug::$RESPONSE"
           PROFILE_ID=$(echo "$RESPONSE" | jq -r --arg GROUP_ID "$GROUP_ID" '.data[] | select(.name == $GROUP_ID) | .id')
           if [[ -z "$PROFILE_ID" ]]; then
             echo "Failed to fetch profile ID for group ID $GROUP_ID."
