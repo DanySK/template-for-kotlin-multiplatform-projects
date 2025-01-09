@@ -146,14 +146,11 @@ jobs:
       - staging-repo
       - release
     runs-on: ubuntu-24.04
-    if: always()
+    if: always() && !(contains(needs.staging-repo.result, 'failure') || contains(needs.staging-repo.result, 'cancelled'))
     steps:
-      - run: >
-          curl
-          --request POST
-          --url "https://s01.oss.sonatype.org/service/local/staging/bulk/drop"
-          --header "Accept: application/json"
-          --header "Content-Type: application/json"
-          --data '{"data":{"stagedRepositoryIds":["${{ needs.staging-repo.outputs.staging-repo-id }}"]}}'
-          --user "${{ secrets.MAVEN_CENTRAL_USERNAME }}:${{ secrets.MAVEN_CENTRAL_PASSWORD }}"
-          --verbose
+      - name: Drop staging repository
+        uses: danysk/action-drop-ossrh-staging-repo@1.0.0
+        with:
+          repo-id: ${{ needs.staging-repo.outputs.staging-repo-id }}
+          maven-central-username: ${{ secrets.MAVEN_CENTRAL_USERNAME }}
+          maven-central-password: ${{ secrets.MAVEN_CENTRAL_PASSWORD }}
