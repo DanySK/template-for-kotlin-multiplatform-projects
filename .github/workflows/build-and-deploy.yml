@@ -55,7 +55,7 @@ jobs:
           CREDENTIALS="${{ secrets.MAVEN_CENTRAL_USERNAME }}:${{ secrets.MAVEN_CENTRAL_PASSWORD }}"
           PAYLOAD="{\"data\":{\"description\":\"Staging repository for $GROUP_ID\"}}"
           # Fetch the profile ID for the group ID
-          RESPONSE=$(curl -u "$CREDENTIALS" -s "$NEXUS_URL")
+          RESPONSE=$(curl -u "$CREDENTIALS" -s "$NEXUS_URL" -H "Accept: application/json")
           echo "Response:"
           echo "$RESPONSE"
           PROFILE_ID=$(echo "$RESPONSE" | jq -r --arg GROUP_ID "$GROUP_ID" '.data[] | select(.name == $GROUP_ID) | .id')
