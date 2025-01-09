@@ -45,39 +45,11 @@ jobs:
     steps:
       - id: create-staging-repo
         name: Create a staging repository
-        env:
-          # Likely for most: io.github.${{ github.repository_owner }}
-          GROUP_ID: org.danilopianini
-          MAVEN_CENTRAL_USERNAME: ${{ secrets.MAVEN_CENTRAL_USERNAME }}
-          MAVEN_CENTRAL_PASSWORD: ${{ secrets.MAVEN_CENTRAL_PASSWORD }}
-        run: |
-          # Define the API URL and request payload
-          NEXUS_URL="https://s01.oss.sonatype.org/service/local/staging/profiles"
-          CREDENTIALS="${{ secrets.MAVEN_CENTRAL_USERNAME }}:${{ secrets.MAVEN_CENTRAL_PASSWORD }}"
-          PAYLOAD="{\"data\":{\"description\":\"Staging repository for $GROUP_ID\"}}"
-          # Fetch the profile ID for the group ID
-          RESPONSE=$(curl -u "$CREDENTIALS" -s "$NEXUS_URL" -H "Accept: application/json")
-          echo "::debug::Response:"
-          echo "::debug::$RESPONSE"
-          PROFILE_ID=$(echo "$RESPONSE" | jq -r --arg GROUP_ID "$GROUP_ID" '.data[] | select(.name == $GROUP_ID) | .id')
-          if [[ -z "$PROFILE_ID" ]]; then
-            echo "Failed to fetch profile ID for group ID $GROUP_ID."
-            exit 1
-          fi
-          # Open a new staging repository
-          RESPONSE=$(curl -u "$CREDENTIALS" \
-            -X POST \
-            -H "Content-Type: application/json" \
-            -d "$PAYLOAD" \
-            -s "$NEXUS_URL/$PROFILE_ID/start")
-          # Extract the staging repository name
-          STAGING_REPO_NAME=$(echo "$RESPONSE" | jq -r '.data.stagedRepositoryId')
-          if [[ -z "$STAGING_REPO_NAME" ]]; then
-            echo "Failed to create a staging repository."
-            exit 1
-          fi
-          echo "Staging repository created: $STAGING_REPO_NAME"
-          echo "staging-repo-id=$STAGING_REPO_NAME" >> $GITHUB_OUTPUT
+        uses: danysk/action-create-ossrh-staging-repo@1.0.0
+        with:
+          group-id: "org.danilopianini"
+          maven-central-username: ${{ secrets.MAVEN_CENTRAL_USERNAME }}
+          maven-central-password: ${{ secrets.MAVEN_CENTRAL_PASSWORD }}
 
   build:
     needs:
