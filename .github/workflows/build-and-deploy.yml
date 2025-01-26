@@ -68,7 +68,7 @@ jobs:
         with:
           fetch-depth: 0
           fetch-tags: true
-      - uses: DanySK/build-check-deploy-gradle-action@3.7.3
+      - uses: DanySK/build-check-deploy-gradle-action@3.7.5
         id: staging-repo
         with:
           # Deploy from macOS since it supports all the platforms
@@ -106,7 +106,7 @@ jobs:
         uses: actions/setup-node@v4.1.0
         with:
           node-version-file: package.json
-      - uses: DanySK/build-check-deploy-gradle-action@3.7.3
+      - uses: DanySK/build-check-deploy-gradle-action@3.7.5
         env:
           STAGING_REPO_ID: ${{ needs.staging-repo.outputs.staging-repo-id }}
         with:
