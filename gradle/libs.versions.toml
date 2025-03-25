@@ -24,7 +24,7 @@ dokka = "org.jetbrains.dokka:2.0.0"
 gitSemVer = "org.danilopianini.git-sensitive-semantic-versioning-gradle-plugin:4.0.2"
 kotest-multiplatform = { id = "io.kotest.multiplatform", version.ref = "kotest" }
 kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
-kotlin-qa = "org.danilopianini.gradle-kotlin-qa:0.78.0"
+kotlin-qa = "org.danilopianini.gradle-kotlin-qa:0.78.3"
 multiJvmTesting = "org.danilopianini.multi-jvm-test-plugin:3.2.3"
 npm-publish = "dev.petuska.npm.publish:3.5.3"
 publishOnCentral = "org.danilopianini.publish-on-central:8.0.4"
