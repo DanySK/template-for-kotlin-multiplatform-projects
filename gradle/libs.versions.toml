@@ -27,5 +27,5 @@ kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref 
 kotlin-qa = "org.danilopianini.gradle-kotlin-qa:0.85.0"
 multiJvmTesting = "org.danilopianini.multi-jvm-test-plugin:3.3.0"
 npm-publish = "org.danilopianini.npm.publish:4.0.1"
-publishOnCentral = "org.danilopianini.publish-on-central:8.0.4"
+publishOnCentral = "org.danilopianini.publish-on-central:8.0.5"
 taskTree = "com.dorongold.task-tree:4.0.1"
