@@ -1,11 +1,9 @@
-import io.kotest.core.spec.style.StringSpec
-import io.kotest.matchers.shouldNotBe
+import kotlin.test.Test
+import kotlin.test.assertTrue
 
-class Test :
-    StringSpec(
-        {
-            "a simple test" {
-                true shouldNotBe false
-            }
-        },
-    )
+class TestTheObvious {
+    @Test
+    fun `test that this test is run`() {
+        assertTrue(true, "This test should always pass")
+    }
+}

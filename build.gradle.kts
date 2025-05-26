@@ -7,7 +7,6 @@ plugins {
     alias(libs.plugins.dokka)
     alias(libs.plugins.gitSemVer)
     alias(libs.plugins.kotlin.multiplatform)
-    alias(libs.plugins.kotest.multiplatform)
     alias(libs.plugins.kotlin.qa)
     alias(libs.plugins.npm.publish)
     alias(libs.plugins.multiJvmTesting)
@@ -46,13 +45,7 @@ kotlin {
         val commonMain by getting { }
         val commonTest by getting {
             dependencies {
-                implementation(libs.bundles.kotlin.testing.common)
-                implementation(libs.bundles.kotest.common)
-            }
-        }
-        val jvmTest by getting {
-            dependencies {
-                implementation(libs.kotest.runner.junit5)
+                implementation(kotlin("test"))
             }
         }
     }
