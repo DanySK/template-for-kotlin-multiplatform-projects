@@ -10,7 +10,7 @@ dokka = "org.jetbrains.dokka:2.0.0"
 gitSemVer = "org.danilopianini.git-sensitive-semantic-versioning-gradle-plugin:5.1.6"
 kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 kotlin-qa = "org.danilopianini.gradle-kotlin-qa:0.90.1"
-multiJvmTesting = "org.danilopianini.multi-jvm-test-plugin:3.5.2"
+multiJvmTesting = "org.danilopianini.multi-jvm-test-plugin:3.5.3"
 npm-publish = "org.danilopianini.npm.publish:4.0.5"
 publishOnCentral = "org.danilopianini.publish-on-central:8.0.7"
 taskTree = "com.dorongold.task-tree:4.0.1"
