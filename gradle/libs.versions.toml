@@ -7,7 +7,7 @@ kotlin = "2.2.0"
 
 [plugins]
 dokka = "org.jetbrains.dokka:2.0.0"
-gitSemVer = "org.danilopianini.git-sensitive-semantic-versioning-gradle-plugin:5.1.6"
+gitSemVer = "org.danilopianini.git-sensitive-semantic-versioning-gradle-plugin:5.1.7"
 kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 kotlin-qa = "org.danilopianini.gradle-kotlin-qa:0.90.1"
 multiJvmTesting = "org.danilopianini.multi-jvm-test-plugin:3.5.3"
