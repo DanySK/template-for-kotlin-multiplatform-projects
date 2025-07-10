@@ -5,30 +5,22 @@ on:
   workflow_dispatch:
 
 jobs:
-  check-secrets:
-    runs-on: ubuntu-24.04
-    outputs:
-      run-with-secrets: ${{ steps.require-secrets.outputs.run-with-secrets }}
-    steps:
-      - name: Find if secrets are available
-        id: detect-secrets
-        uses: DanySK/are-secrets-available@1.0.0
-        with:
-          secrets: ${{ toJson(secrets) }}
-      - name: Set condition
-        id: require-secrets
-        run: |
-          echo "run-with-secrets=${{ steps.detect-secrets.outputs.has-secrets == 'true' && !github.event.repository.fork }}" >> $GITHUB_OUTPUT
   build:
-    needs:
-      - check-secrets
-    if: always() && !(contains(needs.*.result, 'failure') || contains(needs.*.result, 'cancelled'))
     strategy:
       fail-fast: false
       matrix:
         os: [ windows-2025, macos-14, ubuntu-24.04 ]
     runs-on: ${{ matrix.os }}
     steps:
+      - name: Find if secrets are available
+        id: detect-secrets
+        uses: DanySK/are-secrets-available@1.0.0
+        with:
+          secrets: ${{ toJson(secrets) }}
+      - name: Set run-with-secrets condition
+        id: require-secrets
+        run: |
+          echo "run-with-secrets=${{ steps.detect-secrets.outputs.has-secrets == 'true' && !github.event.repository.fork }}" >> $GITHUB_OUTPUT
       - name: Checkout
         uses: actions/checkout@v4.2.2
         with:
@@ -38,7 +30,7 @@ jobs:
         id: staging-repo
         with:
           # Deploy from macOS since it supports all the platforms
-          should-deploy: ${{ runner.os == 'macos' && needs.check-secrets.outputs.run-with-secrets == 'true' }}
+          should-deploy: ${{ runner.os == 'macos' && steps.require-secrets.outputs.run-with-secrets == 'true' }}
           deploy-command: >-
             ./gradlew
             publishAllPublicationsToProjectLocalRepository 
@@ -53,10 +45,8 @@ jobs:
 
   release:
     needs:
-      - check-secrets
       - build
     runs-on: macos-14
-    if: needs.check-secrets.outputs.run-with-secrets == 'true'
     steps:
       - name: Checkout
         uses: actions/checkout@v4.2.2
@@ -88,7 +78,6 @@ jobs:
   success:
     runs-on: ubuntu-24.04
     needs:
-      - check-secrets
       - build
       - release
     if: >-
