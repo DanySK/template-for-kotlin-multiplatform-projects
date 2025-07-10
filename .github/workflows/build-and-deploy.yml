@@ -36,6 +36,7 @@ jobs:
             publishAllPublicationsToProjectLocalRepository 
             zipMavenCentralPortalPublication
             releaseMavenCentralPortalPublication
+            --dry-run
           should-run-codecov: ${{ runner.os == 'Linux' }}
           codecov-token: ${{ secrets.CODECOV_TOKEN }}
           maven-central-username: ${{ secrets.MAVEN_CENTRAL_USERNAME }}
