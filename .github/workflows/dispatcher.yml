@@ -15,7 +15,7 @@ on:
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.number || github.ref }}
-  cancel-in-progress: ${{ !contains(github.ref, 'master') }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/master' }}
 
 jobs:
   dispatcher:
@@ -23,7 +23,7 @@ jobs:
     if: >-
       github.event_name != 'pull_request'
       || github.event.pull_request.head.repo.full_name != github.repository
-      || startsWith(github.head_ref, 'refs/heads/dependabot/')
+      || startsWith(github.head_ref, 'dependabot/')
     steps:
       - run: 'true'
   ci-cd:
