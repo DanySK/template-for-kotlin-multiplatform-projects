@@ -23,11 +23,11 @@ repositories {
 }
 
 multiJvm {
-    jvmVersionForCompilation.set(21)
+    jvmVersionForCompilation.set(8)
 }
 
 kotlin {
-    jvmToolchain(21)
+    jvmToolchain(8)
 
     jvm {
         testRuns["test"].executionTask.configure {
