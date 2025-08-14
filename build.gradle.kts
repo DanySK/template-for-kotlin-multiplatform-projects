@@ -1,3 +1,5 @@
+@file:OptIn(ExperimentalWasmDsl::class)
+
 import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
@@ -64,11 +66,10 @@ kotlin {
         binaries.library()
     }
 
-    // Temporarily disabled due to https://youtrack.jetbrains.com/issue/KT-72858
-//    wasmWasi {
-//        nodejs()
-//        binaries.library()
-//    }
+    wasmWasi {
+        nodejs()
+        binaries.library()
+    }
 
     val nativeSetup: KotlinNativeTarget.() -> Unit = {
         binaries {
