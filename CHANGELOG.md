@@ -1,3 +1,13 @@
+## [0.3.2](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/compare/0.3.1...0.3.2) (2025-08-14)
+
+### Dependency updates
+
+* **core-deps:** update dependency org.jetbrains.kotlin.multiplatform to v2.2.10 ([#887](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/issues/887)) ([7252e13](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/7252e13ece25f663ff4b1ca201ce0d1b75f46624))
+* **deps:** update plugin kotlin-qa to v0.93.1 ([#888](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/issues/888)) ([a7ecfde](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/a7ecfde350b681b205b7b5142a5f20e13e3de84a))
+* **deps:** update plugin multijvmtesting to v4 ([#875](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/issues/875)) ([bbb3b99](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/bbb3b990f72244e9b7cc4578bb81584ea029fec6))
+* **deps:** update plugin npm-publish to v4.1.0 ([#886](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/issues/886)) ([219b2d1](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/219b2d11580b80f3c9b85d77e595c18372cfc357))
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v2.0.29 ([#889](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/issues/889)) ([0db1003](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/0db10031747ca62fb1b862e72cf3ca6680a4ae96))
+
 ## [0.3.1](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/compare/0.3.0...0.3.1) (2025-08-14)
 
 ### Bug Fixes
