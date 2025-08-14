@@ -1,3 +1,44 @@
+## [0.3.0](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/compare/0.2.11...0.3.0) (2025-08-14)
+
+### Features
+
+* enable wasmWasi ([#884](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/issues/884)) ([ebfa86a](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/ebfa86a690f72b00975c77e2609737a5dd48ddde))
+
+### Dependency updates
+
+* **deps:** update dependency gradle to v9 ([#869](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/issues/869)) ([4c46924](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/4c469241c8e750bb2b2a5db844285c1d4f5c2314))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.137 ([#862](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/issues/862)) ([bd4ea06](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/bd4ea0602e7644404f8386a498a72413c6e74895))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.138 ([#865](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/issues/865)) ([e09b6db](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/e09b6dbe5657ff1be8c8c91cfb69316d8809fec1))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.139 ([#872](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/issues/872)) ([f15dfed](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/f15dfed403f249baf14553aa648bedaaee97b272))
+* **deps:** update node.js to v22.17.1 ([#863](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/issues/863)) ([af93fcb](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/af93fcb6fb0073bf1525f3a4bb69df42c33a06a1))
+* **deps:** update node.js to v22.18.0 ([#870](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/issues/870)) ([68fc5ac](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/68fc5acf30cfc4bf2d56a2738728f45f3e84dcd0))
+* **deps:** update plugin com.gradle.develocity to v4.1 ([#861](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/issues/861)) ([e55c094](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/e55c0948cb9fbb5c5b1ce59ae032673925cba0db))
+* **deps:** update plugin gitsemver to v6 ([#879](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/issues/879)) ([8a2a3b6](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/8a2a3b6d96103c5bb8834c2ac9f51840caf04627))
+* **deps:** update plugin kotlin-qa to v0.92.0 ([#866](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/issues/866)) ([186917d](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/186917d92e400e7321f72f533299db7f6391aaa8))
+* **deps:** update plugin kotlin-qa to v0.93.0 ([#867](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/issues/867)) ([f9aac4d](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/f9aac4d8634cd4a03e55f45c6299f857bb89ccd9))
+* **deps:** update plugin multijvmtesting to v3.6.0 ([#864](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/issues/864)) ([67834dd](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/67834ddd1f1609c9748f7455f79cf8d6ab648350))
+* **deps:** update plugin multijvmtesting to v3.6.1 ([#874](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/issues/874)) ([758c80c](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/758c80cf5a249f3942ef8284f0d8d940f027cec7))
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v2.0.28 ([#859](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/issues/859)) ([a09a283](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/a09a28394f4c94706a8fb116a3def12f977dd07d))
+* **deps:** update plugin publishoncentral to v9.0.8 ([#860](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/issues/860)) ([11c9b8e](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/11c9b8ed8666cd215cb1c9625857cfb16765dc70))
+* **deps:** update plugin publishoncentral to v9.1.0 ([#868](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/issues/868)) ([19689e5](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/19689e5d2dfca26ad25ec38973821cd36b5c38c6))
+* **deps:** update plugin publishoncentral to v9.1.2 ([#880](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/issues/880)) ([771ffcf](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/771ffcfb5d09bfa814c7900c2ccabe38ba4a7bac))
+
+### Build and continuous integration
+
+* add dispatched workflow permissions ([af7d7be](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/af7d7be10cc061faf336fbd930f37aa73749fe04))
+* add permission management ([e2cbbfc](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/e2cbbfc472dd4227e2f70dad12b5b0975a9637c0))
+* **deps:** update actions/checkout action to v5 ([#877](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/issues/877)) ([1066a58](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/1066a58635a11666bebeeb9e82da86d488510c70))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v4.0.2 ([#871](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/issues/871)) ([9e0b2c2](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/9e0b2c21dc9fdbbb2b5d6377bda81008e2c7b9bd))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v4.0.3 ([#873](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/issues/873)) ([d1914b3](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/d1914b3d3528b5f3c04f42709a5cdb9c6463ddbf))
+* improve branch name detection in the dispatcher workflow ([71e294b](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/71e294baaf122b2953c8c9e51dc17834a58b1e0c))
+* **release:** enable beta releases for selected branches ([#858](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/issues/858)) ([becab90](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/becab907ced84c0d9104debadc20352e4d6136cd))
+* remove unused step id ([ab22cdc](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/ab22cdcc4a7ff2101af73c625ed52a12f905ef45))
+* run in parallel by default ([#882](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/issues/882)) ([35b872e](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/35b872ed8994ca8a6c2d792e392bc0a7dff81a96))
+
+### Style improvements
+
+* switch to `ktlint_code_style=intellij_idea` ([5f96804](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/5f968044f0e24f81d58d77983a175dcaccff82a5))
+
 ## [0.2.11](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/compare/0.2.10...0.2.11) (2025-07-10)
 
 ### Dependency updates
