@@ -1,3 +1,13 @@
+## [0.3.1](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/compare/0.3.0...0.3.1) (2025-08-14)
+
+### Bug Fixes
+
+* produce java-8 compatible binaries by default ([#881](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/issues/881)) ([b211b1c](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/b211b1ca1ddd6cf14b4841771725fc4edd1782ec))
+
+### Build and continuous integration
+
+* disable the workaround for kotest/kotest[#4521](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/issues/4521) ([#885](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/issues/885)) ([b7733b7](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/b7733b7a7beff9ce9bd39a5adb235db3d6068448))
+
 ## [0.3.0](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/compare/0.2.11...0.3.0) (2025-08-14)
 
 ### Features
