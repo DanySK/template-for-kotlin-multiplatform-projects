@@ -1,3 +1,35 @@
+## [0.3.3](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/compare/0.3.2...0.3.3) (2025-09-10)
+
+### Dependency updates
+
+* **core-deps:** update dependency org.jetbrains.kotlin.multiplatform to v2.2.20 ([#912](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/issues/912)) ([6f07e05](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/6f07e054059d529fbb0978f05c355fbf3e1780ca))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.140 ([#898](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/issues/898)) ([5496ce2](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/5496ce2ced1d6b5c839a1a8294f5da69a83ceb30))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.141 ([#908](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/issues/908)) ([48a8859](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/48a88598cbd8c974f76bd901307e8a8c7a07a2ca))
+* **deps:** update node.js to v22.19.0 ([#906](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/issues/906)) ([3082154](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/308215421cb85b2407e621dd909b205593f1785a))
+* **deps:** update plugin com.gradle.develocity to v4.1.1 ([#899](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/issues/899)) ([1b7ec4d](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/1b7ec4da660c70839a1705dc4accd3b281eae098))
+* **deps:** update plugin gitsemver to v6.0.1 ([#890](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/issues/890)) ([8e26349](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/8e26349a0c5b8bd59cec105ad3700367265084bf))
+* **deps:** update plugin gitsemver to v6.0.2 ([#900](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/issues/900)) ([0982af6](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/0982af651107963cef238eea38fc49877233de8a))
+* **deps:** update plugin gitsemver to v7 ([#901](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/issues/901)) ([a144bc3](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/a144bc36440803d0322154cafb9041c39399f3f5))
+* **deps:** update plugin gitsemver to v7.0.2 ([#903](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/issues/903)) ([f860e34](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/f860e3430ea68a34c82bbd3627c13817fd36d8c7))
+* **deps:** update plugin kotlin-qa to v0.93.2 ([#895](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/issues/895)) ([a47211d](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/a47211dd1b473bc3f27a52bebf02652cad91fd8d))
+* **deps:** update plugin kotlin-qa to v0.93.3 ([#897](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/issues/897)) ([f80a9bb](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/f80a9bbe2fffa22a01370ef8e5a42bba763a37fe))
+* **deps:** update plugin kotlin-qa to v0.94.0 ([#905](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/issues/905)) ([fd2f6e7](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/fd2f6e7bbc270cf1931929ba4a503242a2581b88))
+* **deps:** update plugin multijvmtesting to v4.0.3 ([#891](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/issues/891)) ([635731b](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/635731b3af61cfb972b3de9c5a697d7854443896))
+* **deps:** update plugin multijvmtesting to v4.1.0 ([#894](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/issues/894)) ([aec0b71](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/aec0b7125723e69e1b24afe14daecb6cea0f3815))
+* **deps:** update plugin npm-publish to v4.1.1 ([#892](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/issues/892)) ([610e1e4](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/610e1e4a41be718c9ccd3f519a76d0d0543e0ff2))
+* **deps:** update plugin npm-publish to v4.1.2 ([#913](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/issues/913)) ([3e4ebee](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/3e4ebee8d74437079b0c05dbd0363869420343e9))
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v2.0.30 ([#896](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/issues/896)) ([7416d6a](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/7416d6afa39a57a361777f9c9d50fc5e5d490cf0))
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v2.1.0 ([#907](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/issues/907)) ([61bae97](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/61bae97e14e64ede67ed2645b392a6e0e771b385))
+* **deps:** update plugin publishoncentral to v9.1.3 ([#893](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/issues/893)) ([ee7dafc](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/ee7dafc6697e7995bc4a55880d47a9c9a4bf7357))
+
+### Build and continuous integration
+
+* **deps:** update actions/setup-node action to v5 ([#909](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/issues/909)) ([fe31f76](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/fe31f766278ca01bcc73e4de2d7937c2bd99179b))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v4.0.4 ([#902](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/issues/902)) ([a668f0b](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/a668f0b766925cdac3bc9f7b921129ad2866e72c))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v4.0.5 ([#904](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/issues/904)) ([d162fc8](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/d162fc8b50c588cceba5b70596c5e047a44817b9))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v4.0.6 ([#910](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/issues/910)) ([205ea98](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/205ea98cd09039346512a0ff80b0edda33c82357))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v4.0.7 ([#911](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/issues/911)) ([42fc202](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/42fc2025e5022f1df087c532aaa66a4ec0081926))
+
 ## [0.3.2](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/compare/0.3.1...0.3.2) (2025-08-14)
 
 ### Dependency updates
