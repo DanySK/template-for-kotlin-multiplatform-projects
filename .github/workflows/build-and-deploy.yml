@@ -9,7 +9,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ windows-2025, macos-14, ubuntu-24.04 ]
+        os: [ windows-2025, macos-15, ubuntu-24.04 ]
     runs-on: ${{ matrix.os }}
     steps:
       - name: Find if secrets are available
@@ -55,7 +55,7 @@ jobs:
   release:
     needs:
       - build
-    runs-on: macos-14
+    runs-on: macos-15
     permissions:
       contents: write
       packages: write
