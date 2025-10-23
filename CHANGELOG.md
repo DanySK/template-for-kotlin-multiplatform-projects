@@ -1,3 +1,12 @@
+## [0.3.5](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/compare/0.3.4...0.3.5) (2025-10-23)
+
+### Dependency updates
+
+* **core-deps:** update dependency org.jetbrains.kotlin.multiplatform to v2.2.21 ([#948](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/issues/948)) ([d43008f](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/d43008f544ea1ad91e4250d4c8917657d25513af))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.148 ([#945](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/issues/945)) ([9188eb4](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/9188eb49985fc48fd09554dd7dbe44bb8da63d25))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.149 ([#946](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/issues/946)) ([2568842](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/2568842602fbf6a729ddf117762ce76e64588298))
+* **deps:** update node.js to v22.21.0 ([#947](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/issues/947)) ([eebe427](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/commit/eebe42768f5d65a91c55e555072b9e88a52c281c))
+
 ## [0.3.4](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/compare/0.3.3...0.3.4) (2025-10-15)
 
 ### Dependency updates
