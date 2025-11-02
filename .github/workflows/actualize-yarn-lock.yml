@@ -16,7 +16,7 @@ jobs:
         with:
           fetch-depth: '0'
           token: ${{ github.token }}
-      - uses: DanySK/build-check-deploy-gradle-action@4.0.10
+      - uses: DanySK/build-check-deploy-gradle-action@4.0.11
         with:
           build-command: |
             ./gradlew kotlinUpgradeYarnLock --parallel
