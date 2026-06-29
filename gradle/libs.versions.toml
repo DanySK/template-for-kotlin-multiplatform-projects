@@ -9,7 +9,7 @@ kotlin = "2.4.0"
 dokka = "org.jetbrains.dokka:2.2.0"
 gitSemVer = "org.danilopianini.git-sensitive-semantic-versioning-gradle-plugin:7.0.22"
 kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
-kotlin-qa = "org.danilopianini.gradle-kotlin-qa:1.7.1"
+kotlin-qa = "org.danilopianini.gradle-kotlin-qa:1.8.0"
 multiJvmTesting = "org.danilopianini.multi-jvm-test-plugin:4.5.3"
 npm-publish = "org.danilopianini.npm.publish:4.1.11"
 publishOnCentral = "org.danilopianini.publish-on-central:9.2.7"
