@@ -23,7 +23,7 @@ develocity {
 
 gitHooks {
     commitMsg { conventionalCommits() }
-    createHooks()
+    createHooks(overwriteExisting = true)
 }
 
 rootProject.name = "Template-for-Kotlin-Multiplatform-Projects".lowercase()
