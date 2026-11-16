@@ -43,40 +43,33 @@ kotlin {
     }
 
     sourceSets {
-        val commonMain by getting { }
-        val commonTest by getting {
+        commonTest {
             dependencies {
                 implementation(kotlin("test"))
             }
         }
     }
-
-    js(IR) {
+    js {
         browser()
         nodejs()
         binaries.library()
     }
-
-    @OptIn(ExperimentalWasmDsl::class)
     wasmJs {
         browser()
         nodejs()
         d8()
         binaries.library()
     }
-
     wasmWasi {
         nodejs()
         binaries.library()
     }
-
     val nativeSetup: KotlinNativeTarget.() -> Unit = {
         binaries {
             sharedLib()
             staticLib()
         }
     }
-
     applyDefaultHierarchyTemplate()
     /*
      * Linux 64
@@ -90,7 +83,6 @@ kotlin {
     /*
      * Apple OSs
      */
-    macosX64(nativeSetup)
     macosArm64(nativeSetup)
     iosArm64(nativeSetup)
     iosSimulatorArm64(nativeSetup)
@@ -99,7 +91,7 @@ kotlin {
     watchosSimulatorArm64(nativeSetup)
     tvosArm64(nativeSetup)
     tvosSimulatorArm64(nativeSetup)
-
+    // Shared configuration
     targets.all {
         compilations.all {
             compileTaskProvider.configure {
