@@ -66,8 +66,9 @@ kotlin {
     }
     val nativeSetup: KotlinNativeTarget.() -> Unit = {
         binaries {
-            sharedLib()
-            staticLib()
+            // uncomment these lines to produce native executables. Not needed for a pure Kotlin library.
+//            sharedLib()
+//            staticLib()
         }
     }
     applyDefaultHierarchyTemplate()
