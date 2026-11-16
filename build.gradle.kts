@@ -106,8 +106,8 @@ kotlin {
 
 signing {
     if (System.getenv("CI") == "true") {
-        val signingKey: String? by project
-        val signingPassword: String? by project
+        val signingKey = project.findProperty("signingKey")?.toString()
+        val signingPassword = project.findProperty("signingPassword")?.toString()
         useInMemoryPgpKeys(signingKey, signingPassword)
     }
 }
@@ -141,7 +141,7 @@ npmPublish {
     registries {
         register("npmjs") {
             uri.set("https://registry.npmjs.org")
-            val npmToken: String? by project
+            val npmToken = project.findProperty("npmToken")?.toString()
             authToken.set(npmToken)
             dry.set(npmToken.isNullOrBlank())
         }
