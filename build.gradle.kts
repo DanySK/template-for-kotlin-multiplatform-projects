@@ -81,16 +81,24 @@ kotlin {
      */
     mingwX64(nativeSetup)
     /*
+     * Android Native
+     */
+    androidNativeArm32(nativeSetup)
+    androidNativeArm64(nativeSetup)
+    androidNativeX86(nativeSetup)
+    androidNativeX64(nativeSetup)
+    /*
      * Apple OSs
      */
     macosArm64(nativeSetup)
     iosArm64(nativeSetup)
     iosSimulatorArm64(nativeSetup)
+    tvosArm64(nativeSetup)
+    tvosSimulatorArm64(nativeSetup)
     watchosArm32(nativeSetup)
     watchosArm64(nativeSetup)
     watchosSimulatorArm64(nativeSetup)
-    tvosArm64(nativeSetup)
-    tvosSimulatorArm64(nativeSetup)
+    watchosDeviceArm64(nativeSetup)
     // Shared configuration
     targets.all {
         compilations.all {
